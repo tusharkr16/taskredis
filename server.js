@@ -49,7 +49,7 @@ await connectDB();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://yourfrontenddomain.com"],
+    origin: ["http://localhost:9002", "https://yourfrontenddomain.com"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true, 
   })
