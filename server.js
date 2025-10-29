@@ -36,6 +36,7 @@ import adminRoutes from "./routes/adminRoutes.js"
 import courseRoutes from "./routes/courseRoutes.js"
 import recommendationRoutes from "./routes/recommendationRoutes.js"
 import { connectDB } from "./db/db.js";
+import cors from "cors";
 
 
 dotenv.config();
@@ -45,6 +46,14 @@ const app = express();
 app.use(express.json());
 
 await connectDB();
+
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://yourfrontenddomain.com"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, 
+  })
+);
 
 
 app.use("/api/admin", adminRoutes);
