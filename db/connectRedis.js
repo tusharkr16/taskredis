@@ -2,7 +2,7 @@
 import { createClient } from "redis";
 
 export const redisClient = createClient({
-  url: process.env.REDIS_URL || "redis://localhost:6379",
+  url: "rediss://red-d40ravvgi27c73cuha7g:vYqOWXrNnWHosBrLMTDVfwaHwRaIE2CM@oregon-keyvalue.render.com:6379",
 });
 
 redisClient.on("connect", () => console.log("✅ Redis connected"));
